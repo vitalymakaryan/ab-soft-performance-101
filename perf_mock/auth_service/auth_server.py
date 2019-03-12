@@ -28,7 +28,8 @@ TOKENS = []  # in-memory storage for user tokens, will be flushed after server r
 @app.route('/api/auth/generate_token', methods=['GET'])
 def generate_token():
     slowdown()
-    token = str(uuid4())
+    #token = str(uuid4())
+    token = 'fd708508-7a5f-4094-af6a-5b6c848a69b9'
     TOKENS.append(token)
     app.logger.info("Generated token: {}".format(token))
     return jsonify({'token': token}), 200
